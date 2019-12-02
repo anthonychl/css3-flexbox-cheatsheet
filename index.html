@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlexBox Cheatsheet</title>
+    <style> 
+    /* the media query makes it responsive, with a minimum width of 768px
+     it'll display the elements as we set them, else
+     if the width is under 768px, it will stack the divs*/
+        @media(min-width: 768px){
+            .container-1{
+                display: flex; /* automatically puts the elements inside the container side by side, without adding floats*/
+                
+                /* items by default will have the same height unless we modify it as below:
+                align-items: flex-start;
+                align-items: flex-end;
+                align-items: center;*/
+                align-items: stretch; /* this is the default value */
+
+                /* we can change the direction to horizontal or vertical
+                flex-direction: column; (vertical)*/
+                flex-direction: row;  /* default value (horizontal)*/
+            }
+
+            .container-2{
+                display: flex;
+
+                /* 
+                justify-content: start
+                justify-content: stretch;
+                justify-content: end;
+                justify-content: center;
+                justify-content: space-between;
+                justify-content: space-around;*/
+                justify-content: space-evenly;
+
+            }
+
+           
+        }
+        
+        .container-1 div{
+            border: 1px #ccc solid;
+            padding: 10px;
+        }
+        .box-1{
+            /*flex: 1;  if the flex number is the same for all boxes they'll be the same size*/
+            flex: 3; /* the bigger we make an item the smaller we make the others*/ 
+            order: 2; /* changing the order of the boxes whithout modifying the html code */
+        }
+        .box-2{
+            flex: 1;
+            order: 1;
+        }
+        .box-3{
+            flex: 1;
+            order: 3;
+        }
+
+        
+
+        .container-2 div{
+            border: 1px #ccc solid;
+            padding: 10px;
+        }
+
+        .container-2-box{
+            flex-basis: 25%; /* flex-basis is the same as width */
+        }
+
+        /* left this container out of the media query to show how
+        the wrap property pushes the boxes down as the 
+        page becomes narrower */
+        .container-3{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .container-3 div{
+            border: 1px #ccc solid;
+            padding: 10px;
+        } 
+
+        .container-3-box{
+            flex-basis: 12%;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container-1">
+        <div class="box-1">
+            <h3>Box One</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+        </div>
+        <div class="box-2">
+            <h3>Box Two</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+        </div>
+        <div class="box-3">
+            <h3>Box Three</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+        </div>
+    </div>
+
+    <div class="container-2">
+        <div class="container-2-box">
+            <h3>Box 4</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+        </div>
+        <div class="container-2-box">
+            <h3>Box 5</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+        </div>
+        <div class="container-2-box">
+            <h3>Box 6</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+        </div>
+    </div>
+
+    <div class="container-3">
+            <div class="container-3-box">
+                <h3>Box 7</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+            </div>
+            <div class="container-3-box">
+                <h3>Box 8</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+            </div>
+            <div class="container-3-box">
+                <h3>Box 9</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+            </div>
+            <div class="container-3-box">
+                <h3>Box 10</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+            </div>
+            <div class="container-3-box">
+                <h3>Box 11</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+            </div>
+            <div class="container-3-box">
+                <h3>Box 12</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, aliquid animi commodi, velit natus enim incidunt qui et cupiditate earum fugiat similique doloribus aperiam ipsam unde, pariatur adipisci. Harum voluptas suscipit consequatur iure obcaecati. Soluta fugit distinctio ea a accusamus?</p>
+            </div>
+        </div>
+</body>
+</html>
